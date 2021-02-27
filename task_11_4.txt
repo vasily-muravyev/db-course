@@ -1,0 +1,18 @@
+При помощи базы данных Redis решите задачу поиска имени пользователя по электронному
+адресу и наоборот, поиск электронного адреса пользователя по его имени.
+
+В этой задаче также удобно использовать хэши - один для поиска имени по почте и второй для поиска почты по имени.
+
+Пример использования:
+
+HSET user:username1 email mail1@gmail.com
+HSET mail:mail1@gmail.com name username1
+
+HSET user:username2 email mail2@gmail.com
+HSET mail:mail2@gmail.com name username2
+
+
+HGET user:username1 email
+HGET user:username2 email
+HGET mail:mail1@gmail.com name
+HGET mail:mail2@gmail.com name
